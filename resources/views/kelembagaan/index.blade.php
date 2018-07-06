@@ -6,7 +6,7 @@
 		<div class="col-md-12">
 			<div class="panel panel-info">
 				<div class="panel-heading">
-					<div class="panel-title pull-right"><a href="{{ route('kategori.create') }}">Add Data</a>
+					<div class="panel-title pull-right"><a href="{{ route('kelembagaan.create') }}">Add Data</a>
 				</div>
 			</div>
 <div class="panel-body">
@@ -16,25 +16,29 @@
 				<tr>
 					<th>No</th>
 					<th>Nama</th>
+					<th>Deskripsi</th>
+					<th>Kategori</th>
+					
 					<th colspan="3">Action</th>
 				</tr>	
 </thead>
 <tbody>
 	@php $no = 1; @endphp
-	@foreach($kategori as $data)
+	@foreach($kelembagaan as $data)
 	<tr>
 		<td> {{ $no++ }} </td>
 		<td> {{ $data->nama }} </td>
-		
+		<td> {{ $data->deskripsi }} </td>
+		<td> {{ $data->kategori_id }} </td>
 		
 	<td>
-		<a class="btn btn-primary" href=" {{ route('kategori.edit',$data->id)}} ">Edit Data</a>
+		<a class="btn btn-primary" href=" {{ route('kelembagaan.edit',$data->id)}} ">Edit Data</a>
 	</td>
 	<td>
-		<a class="btn btn-success" href=" {{ route('kategori.show',$data->id)}} ">Show</a>
+		<a class="btn btn-success" href=" {{ route('kelembagaan.show',$data->id)}} ">Show</a>
 	</td>
 	<td>
-							<form method="post" action="{{ route('kategori.destroy',$data->id) }}">
+							<form method="post" action="{{ route('kelembagaan.destroy',$data->id) }}">
 								<input name="_token" type="hidden" value="{{ csrf_token() }}">
 								<input type="hidden" name="_method" value="DELETE">
 

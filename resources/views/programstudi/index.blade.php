@@ -6,7 +6,7 @@
 		<div class="col-md-12">
 			<div class="panel panel-info">
 				<div class="panel-heading">
-					<div class="panel-title pull-right"><a href="{{ route('programstudis.create') }}">Add Data</a>
+					<div class="panel-title pull-right"><a href="{{ route('programstudi.create') }}">Add Data</a>
 				</div>
 			</div>
 <div class="panel-body">
@@ -14,6 +14,7 @@
 		<table class="table">
 			<thead>
 				<tr>
+					<th>No</th>
 					<th>Nama</th>
 					<th>Judul</th>
 					<th>Deskripsi</th>
@@ -24,7 +25,7 @@
 </thead>
 <tbody>
 	@php $no = 1; @endphp
-	@foreach($programstudis as $data)
+	@foreach($programstudi as $data)
 	<tr>
 		<td> {{ $no++ }} </td>
 		<td> {{ $data->nama }} </td>
@@ -33,13 +34,13 @@
 		<td> {{ $data->kategori_id }} </td>
 		
 	<td>
-		<a class="btn btn-primary" href=" {{ route('programstudis.edit',$data->id)}} ">Edit Data</a>
+		<a class="btn btn-primary" href=" {{ route('programstudi.edit',$data->id)}} ">Edit Data</a>
 	</td>
 	<td>
-		<a class="btn btn-success" href=" {{ route('programstudis.show',$data->id)}} ">Show</a>
+		<a class="btn btn-success" href=" {{ route('programstudi.show',$data->id)}} ">Show</a>
 	</td>
 	<td>
-							<form method="post" action="{{ route('programstudis.destroy',$data->id) }}">
+							<form method="post" action="{{ route('programstudi.destroy',$data->id) }}">
 								<input name="_token" type="hidden" value="{{ csrf_token() }}">
 								<input type="hidden" name="_method" value="DELETE">
 

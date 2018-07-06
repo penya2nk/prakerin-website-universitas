@@ -4,11 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProgramStudi extends Model
+class Kelembagaan extends Model
 {
-    
-    protected $table = 'programstudis';
-protected $fillable = ['nama','judul','deskripsi','kategori_id'];
+     protected $table = 'kelembagaans';
+protected $fillable = ['nama','deskripsi','kategori_id'];
 public $timestamp = true;
 
 public function Kategori()

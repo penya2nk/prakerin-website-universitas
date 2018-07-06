@@ -14,6 +14,7 @@
 		<table class="table">
 			<thead>
 				<tr>
+					<th>No</th>
 					<th>Sejarah</th>
 					<th>Visi</th>
 					<th>Misi</th>

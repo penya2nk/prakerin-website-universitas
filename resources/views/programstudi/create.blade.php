@@ -5,11 +5,11 @@
 		<div class="col-md-12">
 			<div class="panel panel-primary">
 			  <div class="panel-heading">Add Data 
-			  	<div class="panel-title pull-right"><a href="{{ route('programstudis.index') }}">Back</a>
+			  	<div class="panel-title pull-right"><a href="{{ route('programstudi.index') }}">Back</a>
 			  	</div>
 			  </div>
 			  <div class="panel-body">
-			  	<form action="{{ route('programstudis.store') }}" method="post" >
+			  	<form action="{{ route('programstudi.store') }}" method="post" >
 			  		{{ csrf_field() }}
 			  		<div class="form-group {{ $errors->has('nama') ? ' has-error' : '' }}">
 			  			<label class="control-label">Nama</label>	
@@ -43,7 +43,11 @@
 
 			  		<div class="form-group {{ $errors->has('kategori_id') ? ' has-error' : '' }}">
 			  			<label class="control-label">Kategori</label>	
-			  			<input type="text" name="kategori_id" class="form-control"  required>
+			  			<select name="kategori_id" class="form-control">
+			  				@foreach($kategori as $data)
+			  				<option value="{{ $data->id }}">{{ $data->nama }}</option>
+			  				@endforeach
+			  			</select>
 			  			@if ($errors->has('kategori_id'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('kategori_id') }}</strong>

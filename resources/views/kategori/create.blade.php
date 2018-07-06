@@ -5,11 +5,11 @@
 		<div class="col-md-12">
 			<div class="panel panel-primary">
 			  <div class="panel-heading">Add Data 
-			  	<div class="panel-title pull-right"><a href="{{ route('kategoris.index') }}">Back</a>
+			  	<div class="panel-title pull-right"><a href="{{ route('kategori.index') }}">Back</a>
 			  	</div>
 			  </div>
 			  <div class="panel-body">
-			  	<form action="{{ route('kategoris.store') }}" method="post" >
+			  	<form action="{{ route('kategori.store') }}" method="post" >
 			  		{{ csrf_field() }}
 			  		<div class="form-group {{ $errors->has('nama') ? ' has-error' : '' }}">
 			  			<label class="control-label">Nama</label>	

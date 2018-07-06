@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Kategori;
 class KategoriController extends Controller
 {
     /**
@@ -13,7 +13,10 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        //
+        //menampilkan semua data post melalui model 'post'
+        $kategori = Kategori::all();
+        return view('kategori.index',compact('kategori'));
+
     }
 
     /**
@@ -23,7 +26,7 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        //
+        return view('kategori.create');
     }
 
     /**
@@ -34,7 +37,14 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $this->validate($request,[
+            'nama' => 'required|max:255'
+        ]);
+
+        $kategori = new Kategori;
+        $kategori->nama = $request->nama;
+        $kategori->save();
+        return redirect()->route('kategori.index');
     }
 
     /**
@@ -45,7 +55,8 @@ class KategoriController extends Controller
      */
     public function show($id)
     {
-        //
+        $kategori = Kategori::findOrFail($id);
+        return view('kategori.show',compact('kategori'));
     }
 
     /**
@@ -56,7 +67,9 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        //
+        // memanggil data pos berdasrkan id di halaman pos edit
+        $kategori = Kategori::findOrFail($id);
+        return view('kategori.edit',compact('kategori'));
     }
 
     /**
@@ -68,7 +81,16 @@ class KategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         // unique dihapus karena ketika update data title tidak diubah juga tidak apa-apa
+        $this->validate($request,[
+            'nama' => 'required|max:255',
+        ]);
+
+        // update data berdasarkan id
+        $kategori = Kategori::findOrFail($id);
+        $kategori->nama = $request->nama;
+        $kategori->save();
+        return redirect()->route('kategori.index');
     }
 
     /**
@@ -79,6 +101,9 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // delete data beradasarkan id
+        $kategori = Kategori::findOrFail($id);
+        $kategori->delete();
+        return redirect()->route('kategori.index');  
     }
 }

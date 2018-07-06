@@ -22,3 +22,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/beranda','BerandaController');
+Route::resource('/kategori','KategoriController');
+Route::resource('/programstudi','ProgramStudiController');
+Route::resource('/kelembagaan','KelembagaanController');
+Route::resource('/berita','BeritaController');
+
