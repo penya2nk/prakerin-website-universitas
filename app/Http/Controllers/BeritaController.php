@@ -25,8 +25,7 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        $kategori = Kategori::all();
-               
+        $kategori = Kategori::all();     
         return view('berita.create',compact('kategori'));
     }
 
@@ -52,6 +51,13 @@ class BeritaController extends Controller
         $berita->tgl_publikasi = $request->tgl_publikasi;
         $berita->deskripsi = $request->deskripsi;
         $berita->kategori_id = $request->kategori_id;
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $destinationPath = public_path().'/assets/img/fotoartikel/';
+            $filename = str_random(6).'_'.$file->getClientOriginalName();
+            $uploadSuccess = $file->move($destinationPath, $filename);
+            $artikel->foto = $filename;
+            }
         $berita->save();
         return redirect()->route('berita.index');
     }
@@ -105,10 +111,32 @@ class BeritaController extends Controller
         $berita->tgl_publikasi = $request->tgl_publikasi;
         $berita->deskripsi = $request->deskripsi;
         $berita->kategori_id = $request->kategori_id;
+         // edit upload foto
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $destinationPath = public_path().'/assets/img/fotoartikel/';
+            $filename = str_random(6).'_'.$file->getClientOriginalName();
+            $uploadSuccess = $file->move($destinationPath, $filename);
+    
+        // hapus foto lama, jika ada
+        if ($berita->foto) {
+        $old_foto = $berita->foto;
+        $filepath = public_path() . DIRECTORY_SEPARATOR . '/assets/img/fotoartikel'
+        . DIRECTORY_SEPARATOR . $berita->foto;
+            try {
+            File::delete($filepath);
+            } catch (FileNotFoundException $e) {
+        // File sudah dihapus/tidak ada
+            }
+        }
+        $berita->foto = $filename;
+}
+    
         $berita->save();
+        // dd($berita);
         return redirect()->route('berita.index');
     }
-
+        
 
     /**
      * Remove the specified resource from storage.

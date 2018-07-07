@@ -5,7 +5,8 @@
 	<div class="container">
 		<div class="col-md-12">
 			<div class="panel panel-info">
-				<div class="panel-heading">
+			<center><h1>B e r a n d a</h1></center>		
+		<div class="panel-heading">
 					<div class="panel-title pull-right"><a href="{{ route('beranda.create') }}">Add Data</a>
 				</div>
 			</div>

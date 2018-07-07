@@ -4,6 +4,7 @@
 	<div class="container">
 		<div class="col-md-12">
 			<div class="panel panel-primary">
+				<center><h1>P r o g r a m  S t u d i</h1></center>
 			  <div class="panel-heading">
 			  	<div class="panel-title pull-right"><a href="{{ route('programstudi.index') }}">Back</a>
 			  	</div>
@@ -13,11 +14,9 @@
 			  			<label class="control-label">Nama</label>	
 			  			<input type="text" name="nama" class="form-control" value="{{ $programstudi->nama }}"  readonly>
 			  		</div>
-
-			  		<div class="form-group">
+					<div class="form-group">
 			  			<label class="control-label">Judul</label>	
-			  			<input type="text" name="judul" class="form-control" value="{{ $programstudi->judul }}"  
-			  			readonly>
+			  			<input type="text" name="judul" class="form-control" value="{{ $programstudi->judul }}"  readonly>
 			  		</div>
 
 			  		<div class="form-group">

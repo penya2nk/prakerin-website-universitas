@@ -18,6 +18,7 @@ class CreateBeritasTable extends Migration
             $table->string('foto');
             $table->string('judul');
             $table->date('tgl_publikasi');
+            $table->text('deskripsi');
             $table->unsignedInteger('kategori_id');
             $table->foreign('kategori_id')->references('id')->on('kategoris')->ondelete('cascade');
             $table->timestamps();

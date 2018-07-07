@@ -5,6 +5,7 @@
 	<div class="container">
 		<div class="col-md-12">
 			<div class="panel panel-info">
+				<center><h1>K a t e g o r i</h1></center>
 				<div class="panel-heading">
 					<div class="panel-title pull-right"><a href="{{ route('kategori.create') }}">Add Data</a>
 				</div>

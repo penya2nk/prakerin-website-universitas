@@ -4,22 +4,18 @@
 	<div class="container">
 		<div class="col-md-12">
 			<div class="panel panel-primary">
-			  <div class="panel-heading">Add Data 
+				<center><h1>B e r i t a</h1></center>
+			  <div class="panel-heading"> 
 			  	<div class="panel-title pull-right"><a href="{{ route('berita.index') }}">Back</a>
 			  	</div>
 			  </div>
 			  <div class="panel-body">
 			  	<form action="{{ route('berita.store') }}" method="post" >
 			  		{{ csrf_field() }}
-			  		<div class="form-group {{ $errors->has('foto') ? ' has-error' : '' }}">
-			  			<label class="control-label">Foto</label>	
-			  			<input type="text" name="foto" class="form-control"  required>
-			  			@if ($errors->has('foto'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('foto') }}</strong>
-                            </span>
-                        @endif
-			  		</div>
+			  		 <div class="form-group">
+                                <label for="cc-payment" class="control-label mb-1">Foto</label>
+                                <input name="foto" type="file" required>
+                            </div>
 			  		<div class="form-group {{ $errors->has('judul') ? ' has-error' : '' }}">
 			  			<label class="control-label">Judul</label>	
 			  			<input type="text" name="judul" class="form-control"  required>

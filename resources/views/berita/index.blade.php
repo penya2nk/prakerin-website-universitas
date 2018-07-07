@@ -5,6 +5,7 @@
 	<div class="container">
 		<div class="col-md-12">
 			<div class="panel panel-info">
+				<center><h1>B e r i t a</h1></center>
 				<div class="panel-heading">
 					<div class="panel-title pull-right"><a href="{{ route('berita.create') }}">Add Data</a>
 				</div>
@@ -29,11 +30,11 @@
 	@foreach($berita as $data)
 	<tr>
 		<td> {{ $no++ }} </td>
-		<td> {{ $data->foto }} </td>
+		<td><img src="{{asset('assets/img/fotoartikel/'.$data->foto)}}"width="100" height="100">  </td>
 		<td> {{ $data->judul }} </td>
 		<td> {{ $data->tgl_publikasi }} </td>
 		<td> {{ $data->deskripsi }} </td>
-		<td> {{ $data->kategori_id }} </td>
+		<td> {{ $data->kategori->nama }} </td>
 		
 	<td>
 		<a class="btn btn-primary" href=" {{ route('berita.edit',$data->id)}} ">Edit Data</a>

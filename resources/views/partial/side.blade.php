@@ -35,31 +35,31 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="beranda" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
+                  <i class="fa fa-home"></i>
                   <p>Beranda</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="programstudi" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
+                  <i class="fa fa-mortar-board"></i>
                   <p>Program Studi</p>
                 </a>
               </li>
                <li class="nav-item">
                 <a href="kategori" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
+                  <i class="fa fa-server"></i>
                   <p>Kategori</p>
                 </a>
               </li>
                <li class="nav-item">
                 <a href="kelembagaan" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
+                  <i class="  fa fa-institution"></i>
                   <p>Kelembagaan</p>
                 </a>
               </li>
                 <li class="nav-item">
                 <a href="berita" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
+                  <i class="fa fa-newspaper-o"></i>
                   <p>Berita</p>
                 </a>
               </li>

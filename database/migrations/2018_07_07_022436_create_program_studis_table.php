@@ -15,7 +15,7 @@ class CreateProgramStudisTable extends Migration
     {
         Schema::create('program_studis', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama');
+             $table->string('nama');
             $table->string('judul');
             $table->string('deskripsi');
             $table->unsignedInteger('kategori_id');

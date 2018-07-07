@@ -4,6 +4,7 @@
 	<div class="container">
 		<div class="col-md-12">
 			<div class="panel panel-primary">
+				<center><h1>B e r i t a</h1></center>
 			  <div class="panel-heading">
 			  	<div class="panel-title pull-right"><a href="{{ route('berita.index') }}">Back</a>
 			  	</div>
@@ -23,7 +24,7 @@
 			  		</div>
 			  		<div class="form-group">
 			  			<label class="control-label">Deskripsi</label>	
-			  			<input type="date" name="deskripsi" class="form-control" value="{{ $berita->deskripsi }}"  readonly>
+			  			<input type="text" name="deskripsi" class="form-control" value="{{ $berita->deskripsi }}"  readonly>
 			  		</div>
 
 			  		<div class="form-group">

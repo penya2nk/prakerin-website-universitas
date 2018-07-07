@@ -4,6 +4,7 @@
 	<div class="container">
 		<div class="col-md-12">
 			<div class="panel panel-primary">
+				<center><h1>B e r a n d a</h1></center>
 			  <div class="panel-heading">
 			  	<div class="panel-title pull-right"><a href="{{ route('beranda.index') }}">Back</a>
 			  	</div>

@@ -113,8 +113,8 @@ class ProgramStudiController extends Controller
      */
     public function destroy($id)
     {
-        $ps = ProgramStudi::findOrFail($id);
-        $ps->delete();
-        return programstudi()->route('programstudi.index');
+        $programstudi = ProgramStudi::findOrFail($id);
+        $programstudi->delete();
+        return redirect()->route('programstudi.index');
     }
 }

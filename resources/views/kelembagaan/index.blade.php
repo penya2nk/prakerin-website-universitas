@@ -5,6 +5,7 @@
 	<div class="container">
 		<div class="col-md-12">
 			<div class="panel panel-info">
+				<center><h1>K e l e m b a g a a n</h1></center>
 				<div class="panel-heading">
 					<div class="panel-title pull-right"><a href="{{ route('kelembagaan.create') }}">Add Data</a>
 				</div>
@@ -29,7 +30,7 @@
 		<td> {{ $no++ }} </td>
 		<td> {{ $data->nama }} </td>
 		<td> {{ $data->deskripsi }} </td>
-		<td> {{ $data->kategori_id }} </td>
+		<td> {{ $data->kategori->nama }} </td>
 		
 	<td>
 		<a class="btn btn-primary" href=" {{ route('kelembagaan.edit',$data->id)}} ">Edit Data</a>

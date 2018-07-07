@@ -4,6 +4,7 @@
 	<div class="container">
 		<div class="col-md-12">
 			<div class="panel panel-primary">
+				<center><h1>B e r i t a</h1></center>
 			  <div class="panel-heading">
 			  	<div class="panel-title pull-right"><a href="{{ route('berita.index') }}">Back</a>
 			  	</div>
@@ -12,15 +13,16 @@
 			  	<form action="{{ route('berita.update',$berita->id) }}" method="post" >
 			  		<input name="_method" type="hidden" value="PATCH">
         			{{ csrf_field() }}
-			  		<div class="form-group {{ $errors->has('foto') ? ' has-error' : '' }}">
-			  			<label class="control-label">Foto</label>	
-			  			<input type="text" name="foto" class="form-control" value="{{ $berita->foto }}"  required>
-			  			@if ($errors->has('foto'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('foto') }}</strong>
-                            </span>
-                        @endif
-			  		</div>
+			  		  <div class="form-group">
+                                <label for="cc-payment" class="control-label mb-1">Foto</label>
+                                @if (isset($berita) && $berita->foto)
+                                    <p>
+                                        <br>
+                                    <img src="{{ asset('assets/img/fotoartikel/'.$berita->foto) }}" style="width:250px; height:250px;" alt="">
+                                    </p>
+                                @endif
+                                <input name="foto" type="file" value="{{ $berita->foto }}">
+                            </div>
 			  		<div class="form-group {{ $errors->has('judul') ? ' has-error' : '' }}">
 			  			<label class="control-label">Judul</label>	
 			  			<input type="text" name="judul" class="form-control" value="{{ $berita->judul }}"  required>

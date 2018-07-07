@@ -5,6 +5,7 @@
 	<div class="container">
 		<div class="col-md-12">
 			<div class="panel panel-info">
+				<center><h1>P r o g r a m  S t u d i</h1></center>
 				<div class="panel-heading">
 					<div class="panel-title pull-right"><a href="{{ route('programstudi.create') }}">Add Data</a>
 				</div>
@@ -31,7 +32,7 @@
 		<td> {{ $data->nama }} </td>
 		<td> {{ $data->judul }} </td>
 		<td> {{ $data->deskripsi }} </td>
-		<td> {{ $data->kategori_id }} </td>
+		<td> {{ $data->kategori->nama }} </td>
 		
 	<td>
 		<a class="btn btn-primary" href=" {{ route('programstudi.edit',$data->id)}} ">Edit Data</a>
